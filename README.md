@@ -1,0 +1,16 @@
+# Laser Defender
+
+This is a simple game of defending your space ship while flying through hostile space! 
+
+Build in Unity 5.x as part of the "[Learn to Code by Making Games - The Complete Unity](https://www.udemy.com/unitycourse/learn/v4/overview)" by Ben Tristem 
+
+## Credits
+
+**Game Created by** Scott Turnbull <streamweaver@gmail.com>
+
+**Fonts** via http://www.dafont.com/
+
+* Spaceport One
+* Airlock
+* STR
+
