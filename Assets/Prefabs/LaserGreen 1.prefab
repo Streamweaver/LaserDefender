@@ -9,11 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 430978}
   - 212: {fileID: 21223254}
-  - 114: {fileID: 11440790}
   - 50: {fileID: 5028016}
   - 61: {fileID: 6115932}
+  - 114: {fileID: 11439032}
   m_Layer: 0
-  m_Name: LaserGreen
+  m_Name: LaserGreen 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -63,7 +63,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.052, y: 0.228}
---- !u!114 &11440790
+--- !u!114 &11439032
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -71,10 +71,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 194142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfaabf7e01d624245992afb6b15f9e17, type: 3}
+  m_Script: {fileID: 11500000, guid: 43bf5406c1f650e478c6bfd7d62b366f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  <Damage>k__BackingField: 0
 --- !u!212 &21223254
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -101,7 +102,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ed76813742bb4184899666ec985486c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c89f1a6ba80be242a6abb30ecb53eaa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

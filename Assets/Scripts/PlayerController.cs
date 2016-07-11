@@ -5,7 +5,9 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 5.0f;
 	public float padding = 1;
 	public GameObject laserPrefab;
+	public bool invulnerable = false;
 
+	private float health = 100f;
 	private float rof = 0.3f;
 	private float xMin;
 	private float xMax;
@@ -26,13 +28,14 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void MoveShip() {
+		Vector3 moveTo = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 		if (Input.GetKey (KeyCode.RightArrow)) {
-			transform.position +=  Vector3.right * Time.deltaTime * speed;
+			moveTo +=  Vector3.right * Time.deltaTime * speed;
 		} else if (Input.GetKey (KeyCode.LeftArrow)) {
-			transform.position +=  Vector3.left * Time.deltaTime * speed;
+			moveTo +=  Vector3.left * Time.deltaTime * speed;
 		}
-		float newX = Mathf.Clamp (transform.position.x, xMin, xMax);
-		transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+		float newX = Mathf.Clamp (moveTo.x, xMin, xMax);
+		transform.position = new Vector3(newX, moveTo.y, moveTo.z);
 	}
 
 	void FireLasers() {
@@ -45,7 +48,30 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void _Fire() {
-		Instantiate (laserPrefab, transform.position, Quaternion.identity);
+		Laser laser = Instantiate (laserPrefab, transform.position, Quaternion.identity) as Laser;
 	}
 
+	// Adds the damage to the ship and returns any left over damage left.
+	public float AddDamage(float damage) {
+		if (!invulnerable) {
+			health -= damage;
+			if (health <= 0) {
+				Debug.Log ("I'm dead!");
+				Destroy (gameObject);
+				return health * -1; // return any damage exceeding the health.
+			} else {
+				return 0;
+			}
+		} else {
+			return 0f;
+		}
+	}
+		
+	void OnTriggerEnter2D(Collider2D col) {
+		Laser laser = col.gameObject.GetComponent<EnemyLaser> ();
+		if (laser) {
+			laser.Damage = AddDamage (laser.Damage);
+			laser.Hit ();
+		}
+	}
 }

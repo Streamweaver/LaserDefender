@@ -8,9 +8,12 @@ Build in Unity 5.x as part of the "[Learn to Code by Making Games - The Complete
 
 **Game Created by** Scott Turnbull <streamweaver@gmail.com>
 
-**Fonts** via http://www.dafont.com/
+**Fonts** via [dafont[(http://www.dafont.com/)
 
 * Spaceport One
 * Airlock
 * STR
 
+**Art Assets**
+
+* Ships - [MillionthVector](http://millionthvector.blogspot.com/) 
