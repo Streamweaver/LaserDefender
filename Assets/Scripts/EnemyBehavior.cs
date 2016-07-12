@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyBehavior : MonoBehaviour {
 	public GameObject laserPrefab;
-	public float rof = 0.5f;// shots per sec
+	public float rof = 0.3f;// shots per sec
 
 	private float health;
 	private bool invulnerable = false;
@@ -46,7 +46,7 @@ public class EnemyBehavior : MonoBehaviour {
 	}
 
 	void _Fire() {
-		Vector3 startPos = transform.position + new Vector3(0, -2, 0);
+		Vector3 startPos = transform.position + new Vector3(0, -0.5f, 0);
 		Instantiate (laserPrefab, startPos, Quaternion.identity);
 	}
 }

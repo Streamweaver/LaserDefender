@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5028016}
   - 61: {fileID: 6115932}
   - 114: {fileID: 11439032}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LaserGreen 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  <Damage>k__BackingField: 0
 --- !u!212 &21223254
 SpriteRenderer:
   m_ObjectHideFlags: 1
