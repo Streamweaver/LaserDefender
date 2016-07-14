@@ -30,4 +30,4 @@ sysinfo.txt
 *.unitypackage
 
 # AssetPacks
-Assets/"Standard Assets"*
+/Assets/Standard\ Assets*
