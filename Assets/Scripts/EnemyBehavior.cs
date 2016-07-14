@@ -6,11 +6,15 @@ public class EnemyBehavior : MonoBehaviour {
 	public float rof = 0.3f;// shots per sec
 
 	private float health;
-	private bool invulnerable = false;
+	private bool ready = false;
+	private Animator anim;
 
 	void Awake () {
 		health = 100;
-		Debug.Log ("I'm alive!");
+	}
+
+	void Start () {
+		anim = GetComponent<Animator> ();
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
@@ -23,10 +27,9 @@ public class EnemyBehavior : MonoBehaviour {
 
 	// Adds the damage to the ship and returns any left over damage left.
 	public float AddDamage(float damage) {
-		if (!invulnerable) {
+		if (ready) {
 			health -= damage;
 			if (health <= 0) {
-				Debug.Log ("I'm dead!");
 				Destroy (gameObject);
 				return health * -1; // return any damage exceeding the health.
 			} else {
@@ -38,8 +41,11 @@ public class EnemyBehavior : MonoBehaviour {
 	}
 
 	void Update() {
+		if (anim.GetCurrentAnimatorStateInfo (0).IsName ("EnemyArrival")) {
+			ready = true;
+		}
 		float probFire = Time.deltaTime * rof;
-		if (Random.value < probFire) {
+		if (ready && Random.value < probFire) {
 			_Fire ();
 		}
 

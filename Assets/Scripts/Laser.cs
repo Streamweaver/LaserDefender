@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Laser : MonoBehaviour {
-	public float speed = 5.0f;
+	public float speed = 4.0f;
 
 	// Use this for initialization
 	void Start () {

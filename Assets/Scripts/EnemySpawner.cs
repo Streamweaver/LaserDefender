@@ -5,13 +5,14 @@ public class EnemySpawner : MonoBehaviour {
 
 	public GameObject enemyPrefab;
 
-	public float speed = 4.0f;
+	public float speed = 3.0f;
 	public float width = 10f;
 	public float height = 3f;
 	public float xMin;
 	public float xMax;
 
 	private bool moveRight = false;
+	private bool ready = false;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +27,7 @@ public class EnemySpawner : MonoBehaviour {
 		xMax = rightmost.x;
 
 		if(NextFreePosition ()) {
-			Invoke ("SpawnUntilFull", Random.Range (0.3f, 0.6f));
+			Invoke ("SpawnUntilFull", Random.Range (0.3f, 0.9f));
 		}
 
 	}
@@ -45,12 +46,17 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (moveRight) {
-			transform.position += Vector3.right * Time.deltaTime * speed;
-		} else {
-			transform.position += Vector3.left * Time.deltaTime * speed;
+		if (!IsInvoking ("SpawnUntilFull")) {
+			ready = true;
 		}
-
+		if (ready) {
+			if (moveRight) {
+				transform.position += Vector3.right * Time.deltaTime * speed;
+			} else {
+				transform.position += Vector3.left * Time.deltaTime * speed;
+			}
+		}
+			
 		float limitRight = transform.position.x + 0.5f * width;
 		float limitLeft = transform.position.x - 0.5f * width;
 		if (limitLeft <= xMin) {
@@ -60,6 +66,7 @@ public class EnemySpawner : MonoBehaviour {
 		}
 
 		if (AllMembersDead()) {
+			ready = false;
 			Spawn ();
 		}
 	}
