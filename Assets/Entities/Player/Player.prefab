@@ -319,6 +319,8 @@ MonoBehaviour:
   padding: 1
   laserPrefab: {fileID: 194142, guid: abb2c03da18bb644ba417e38953c77a1, type: 2}
   invulnerable: 0
+  laserSound: {fileID: 8300000, guid: 0b2471b991d44d74fb5743d85b3622ae, type: 3}
+  deathSound: {fileID: 8300000, guid: 375d9771085fe1a4e9631ce4eb1abcf5, type: 3}
 --- !u!114 &11451376
 MonoBehaviour:
   m_ObjectHideFlags: 1

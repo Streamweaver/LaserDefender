@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemySpawner : MonoBehaviour {
 
 	public GameObject enemyPrefab;
+	public AudioClip warpSound;
 
 	public float speed = 3.0f;
 	public float width = 10f;
@@ -36,6 +37,7 @@ public class EnemySpawner : MonoBehaviour {
 		Transform freePosition = NextFreePosition ();
 		if (freePosition) {
 			GameObject enemy = Instantiate (enemyPrefab, freePosition.position, Quaternion.identity) as GameObject;
+			AudioSource.PlayClipAtPoint (warpSound, freePosition.transform.position);
 			enemy.transform.parent = freePosition;
 		}
 	}

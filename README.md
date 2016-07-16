@@ -20,3 +20,10 @@ Build in Unity 5.x as part of the "[Learn to Code by Making Games - The Complete
 
 * Ships - [MillionthVector](http://millionthvector.blogspot.com/) 
 
+**Sounds & Music**
+
+* [Laser Shot Silenced](https://www.freesound.org/people/bubaproducer/sounds/151022/) by bubaproducer via freesound.org
+* [Laser Wrath](https://www.freesound.org/people/marcuslee/sounds/42106/) by marcuselee
+* [Laser 04 Rev](https://www.freesound.org/people/chipfork/sounds/73226/) by chipfork
+* [Dark Star](http://www.newgrounds.com/audio/listen/679444) by Satyrcake
+* [Fun Explosion](https://www.freesound.org/people/newagesoup/sounds/347317/) by newagesoup

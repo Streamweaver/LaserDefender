@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour {
 	public float padding = 1;
 	public GameObject laserPrefab;
 	public bool invulnerable = false;
+	public AudioClip laserSound;
+	public AudioClip deathSound;
 
 	private float health = 100f;
 	private float rof = 0.3f;
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour {
 
 	void _Fire() {
 		Laser laser = Instantiate (laserPrefab, transform.position, Quaternion.identity) as Laser;
+		AudioSource.PlayClipAtPoint (laserSound, transform.position);
 	}
 
 	// Adds the damage to the ship and returns any left over damage left.
@@ -56,7 +59,7 @@ public class PlayerController : MonoBehaviour {
 		if (!invulnerable) {
 			health -= damage;
 			if (health <= 0) {
-				Debug.Log ("I'm dead!");
+				AudioSource.PlayClipAtPoint (deathSound, transform.position);
 				Destroy (gameObject);
 				return health * -1; // return any damage exceeding the health.
 			} else {
