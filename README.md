@@ -27,3 +27,6 @@ Build in Unity 5.x as part of the "[Learn to Code by Making Games - The Complete
 * [Laser 04 Rev](https://www.freesound.org/people/chipfork/sounds/73226/) by chipfork
 * [Dark Star](http://www.newgrounds.com/audio/listen/679444) by Satyrcake
 * [Fun Explosion](https://www.freesound.org/people/newagesoup/sounds/347317/) by newagesoup
+* [Eternity](http://sampleswap.org/mp3/song.php?id=362) by DiALED
+* [smell this vibe](http://sampleswap.org/mp3/song.php?id=990) by freaxonic
+* [open_the_box](http://sampleswap.org/mp3/song.php?id=101) by  life in a boxl

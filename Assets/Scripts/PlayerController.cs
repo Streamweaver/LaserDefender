@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour {
 			health -= damage;
 			if (health <= 0) {
 				AudioSource.PlayClipAtPoint (deathSound, transform.position);
-				Destroy (gameObject);
+				Die ();
 				return health * -1; // return any damage exceeding the health.
 			} else {
 				return 0;
@@ -76,5 +76,11 @@ public class PlayerController : MonoBehaviour {
 			laser.Damage = AddDamage (laser.Damage);
 			laser.Hit ();
 		}
+	}
+
+	void Die() {
+		LevelManager mgr = GameObject.Find ("LevelManager").GetComponent<LevelManager> ();
+		mgr.LoadLevel ("Win Screen");
+		Destroy (gameObject);
 	}
 }

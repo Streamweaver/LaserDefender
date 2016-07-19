@@ -5,7 +5,7 @@ using System.Collections;
 public class GUIManager : MonoBehaviour {
 	private Text _scoreField;
 
-	private int _score;
+	public static int score;
 
 	// Use this for initialization
 	void Start () {
@@ -14,13 +14,12 @@ public class GUIManager : MonoBehaviour {
 	}
 
 	public void Score(int points) {
-		_score += points;
-		_scoreField.text = _score.ToString();
+		score += points;
+		_scoreField.text = score.ToString();
 	}
 
-	public void Reset() {
-		_score = 0;
-		_scoreField.text = _score.ToString();
+	public static void Reset() {
+		score = 0;
 	}
-
+		
 }

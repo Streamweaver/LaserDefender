@@ -29,4 +29,8 @@ public class Laser : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+
+	void OnBecameInvisible() {
+		Destroy (gameObject);
+	}
 }
